@@ -1,0 +1,8 @@
+<div style="text-align: right;">
+	<% if (_session.getValue("userid") != null) { %>
+		logged in as <% _s(_session.getValue("username")); %> | 
+			<a href="javascript:;" hx-post="/user/logoutuser" hx-swap="none">logout</a>
+	<% }else{ %>
+			<a href="/user/login">login</a> | <a href="/user/register">register</a>
+	<% } %>
+</div>

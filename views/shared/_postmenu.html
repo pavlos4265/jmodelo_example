@@ -1,0 +1,13 @@
+<div class="postmenu" id="postmenu_<%_s(_model.getId());%>">
+	<div>
+		<% _s(_model.getLikes()); %> likes
+	</div>
+	<div style="text-align:right;">
+	<% if (_model.getUserId() == _session.getValue("userid")) { %>
+		<a href="javascript:;" hx-get="/post/delete/<% _s(_model.getId()); %>" 
+		hx-target="#post_<% _s(_model.getId()); %>" hx-swap="none">delete</a> | 
+	<% } %>
+	<a href="javascript:;" hx-get="/post/like/<% _s(_model.getId()); %>" hx-swap="outerHTML" 
+	hx-target="#postmenu_<% _s(_model.getId()); %>">like</a>
+	</div>
+</div>

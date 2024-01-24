@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example Social Network</title>
+		<link rel="stylesheet" href="/style.css">
+		<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="container">
+			<% _partial("_topmenu.html", _model); %>
+			<div id="title">
+				<h2>Example Social Network</h3>
+			</div>
+			<% _partial(_partialView, _model); %>
+		</div>
+	</body>
+</html>

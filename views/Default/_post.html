@@ -1,0 +1,11 @@
+<% 
+	dateFormat = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm");
+%>
+<div class="post" id="post_<% _s(_model.getId()); %>">
+	<h3>
+	<span style="color:blue;"><% _s(_model.getUsername()); %></span> 
+	<small style="color:gray;"><% _s(dateFormat.format(new java.util.Date(_model.timePosted))); %></small>
+	</h3>
+	<% _s(_model.getContent()); %>
+	<% _partial("_postmenu.html", _model); %>
+</div>

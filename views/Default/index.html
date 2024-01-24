@@ -1,0 +1,15 @@
+<script>
+	document.body.addEventListener('postSubmitted', function(evt){
+		htmx.find('#posttextarea').value = '';
+	})
+</script>
+
+<div style="text-align:center;">
+	<form hx-post="/post/create" hx-target="#posts" hx-swap="afterbegin">
+		<textarea id="posttextarea" style="min-width: 50%;" rows="4" name="content" placeholder="Your thoughts"></textarea><br/>
+		<input type="submit" value="Post"/>
+	</form>
+</div>
+
+<% _partial("_posts.html", _model); %>
+
